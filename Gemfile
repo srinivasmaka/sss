@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0'
+gem 'rails', '5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-
+gem 'autoprefixer-rails', '8.6.5'
 gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'

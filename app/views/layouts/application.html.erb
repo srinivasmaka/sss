@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sss</title>
+  <title>School</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
 </head>
 <body>
+
+<%if current_user%>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add Resources
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/teachers">Teacher</a></li>
+          <li><a href="/students">Student</a></li>
+          <li><a href="/students">Student</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Notifications</a></li>
+      <li><a href="#">Org</a></li>
+      <li><a href="#">Trips</a></li>
+      <li><a href="#">Scholarship</a></li>
+      <li><a href="#">Exams</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><%= link_to "Sign Out" , destroy_user_session_path , method: :delete%></li>
+    </ul>
+  </div>
+</nav> 
+<%else%>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Sign in" , new_user_session_path %></li>
+      <li><%= link_to "Sign Up" , new_user_registration_path%></li>
+    </ul>
+  </div>
+</nav> 
+<%end%>
+
 
 <%= yield %>
 
